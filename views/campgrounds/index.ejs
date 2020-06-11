@@ -1,0 +1,32 @@
+<%- include("../partials/header")%>
+
+<section class="container">
+	<header class="jumbotron">
+		<h1>
+		Welcome to YelpCamp
+		</h1>
+		<p>
+			View our hand-picked campgrounds from all over New Zealand!
+		</p>
+		<p>
+		<a class="btn btn-primary btn-lg" href="/campgrounds/new"><i class="fa fa-plus-square" aria-hidden="true"></i> Add new campground</a>
+		</p>
+	</header>
+	<section class="row container2">
+		<% campgrounds.forEach(function(campground){ %>
+		<div class="holder">
+			<div class="item red">
+				<a href="/campgrounds/<%=campground._id%>">
+				<img src="<%=campground.image%>"/>
+				<i class="fa fa-arrow-circle-right"></i>
+				</a>
+			</div>
+			<div class="">
+				<a href="/campgrounds/<%=campground._id%>"><h4><%= campground.name %></h4></a>
+			</div>
+		</div>
+		<% 	}); %>
+	</section>
+</section>
+
+<%- include("../partials/footer")%>

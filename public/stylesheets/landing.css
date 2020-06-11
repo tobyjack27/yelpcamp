@@ -1,0 +1,90 @@
+body {
+	background-color: black;
+}
+
+#landing-header {
+	z-index: 1;
+	position: relative;
+	text-align: center;
+	padding-top: 40vh;
+}
+
+#landing-header h1 {
+	color: white;
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 
+                 0px 8px 13px rgba(0,0,0,0.1), 
+                 0px 18px 13px rgba(0,0,0,0.1);
+}
+
+.btn {
+	box-shadow: 0px 4px 3px rgba(0,0,0,0.4), 
+                 0px 8px 13px rgba(0,0,0,0.1), 
+                 0px 18px 13px rgba(0,0,0,0.1);
+}
+
+.slideshow {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.slideshow li {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	opacity: 0;
+	z-index: 0;
+	animation: imageAnimation 50s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+	background-image: url(https://cdn.fstoppers.com/styles/large-16-9/s3/lead/2019/09/39474634f5eac6ba2973e73dea5d9b70.jpg);
+}
+
+.slideshow li:nth-child(2) {
+	background-image: url(https://www.creativelive.com/blog/wp-content/uploads/2016/07/Stocksy_txp9eca06a1mpv000_Medium_213542-1.jpg);
+	animation-delay: 10s;
+}
+
+.slideshow li:nth-child(3) {
+	background-image: url(https://www.creativelive.com/blog/wp-content/uploads/2016/07/Stocksy_txp9eca06a1mpv000_Medium_213542-1.jpg);
+	animation-delay: 20s;
+}
+
+.slideshow li:nth-child(4) {
+	background-image: url(https://www.nationalgeographic.com/content/dam/travel/2019-digital/best-travel-photos-2019/13-best-travel-photos-2019natgeo_001.jpg);
+	animation-delay: 30s;
+}
+
+.slideshow li:nth-child(4) {
+	background-image: url(https://www.nationalgeographic.com/content/dam/travel/2019-digital/best-travel-photos-2019/01-best-travel-photos-2019stnmtz_20190503_0693.jpg);
+	animation-delay: 40s;
+}
+
+@keyframes imageAnimation {
+	0% {
+		opacity: 0;
+		animation-timing-function: ease-in;
+	}
+	10% {
+		opacity: 1;
+		animation-timing-function: ease-out;
+	}
+	20% {
+		opacity: 1
+	}
+	30% {
+		opacity: 0
+	}
+}
