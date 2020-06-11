@@ -18,7 +18,7 @@ middlewareObj.isCommentAuthor = function(req, res, next){
 				console.log(err);
 				res.redirect("back");
 			} else {
-				if(foundComment.author.id.equals(req.user._id)){
+				if(foundComment.author.id.equals(req.user._id) || req.user._id.equals("Admin")){
 					next();
 				} else {
 					req.flash("error", "You don't have permission to do that");
@@ -39,7 +39,7 @@ middlewareObj.isCampgroundAuthor = function(req, res, next){
 				req.flash("error", "Campground not found")
 				res.redirect("back");
 			} else {
-				if(foundCampground.author.id.equals(req.user._id)){
+				if(foundCampground.author.id.equals(req.user._id) || req.user._id.equals("Admin")){
 					next();
 				} else {
 					req.flash("error", "You don't have permission to do that");
