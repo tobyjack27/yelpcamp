@@ -38,11 +38,14 @@ router.get("/login", function(req, res){
 });
 
 //login logic
-router.post("/login", passport.authenticate("local", ///authenticate checks whether user/password is valid
-	{successRedirect: "/campgrounds", //middleware determines where redirect goes depending on success or failure of authentication
-	 failureRedirect: "/login"
-	}), function(req, res){
-	//this callback doesn't really do anything... can delete if you like.
+router.post("/login", 
+	passport.authenticate("local", ///authenticate checks whether user/password is valid
+	{failureRedirect: "/login",
+	 failureFlash: true
+	}), 
+	function(req, res){
+	req.flash("success", "You have been logged in as " + req.session.passport.user);
+	res.redirect("/campgrounds");
 });
 
 //logout route

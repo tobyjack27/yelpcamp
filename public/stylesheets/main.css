@@ -16,80 +16,72 @@
 	display: inline-block;
 }
 
-@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);
-@import url('https://fonts.googleapis.com/css?family=Raleway:200');
-
 section.container2 {
-  display: flex;
+	display: flex;
 	flex-wrap: wrap;
-  justify-content: center;
-	margin-bottom:50px;
+	justify-content: center;
+	margin-bottom: 50px;
 }
 
 div.item {
 	border-radius: 10px 10px 0 0;
 	position: relative;
-  float: left;
-  overflow: hidden;
-  margin: 10px 1%;
-  min-width: 220px;
-  max-width: 310px;
-  width: 100%;
-  background: #000000;
-  text-align: center;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	margin: 0;
+	min-width: 220px;
+	max-width: 310px;
+	width: 100%;
+	background: #000000;
+	text-align: center;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+	background-color: #0275d8;
 }
 
 div.item * {
-  box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 div.item img {
 	border-radius: 10px 10px 0 0;
-  min-width: 100%;
-  vertical-align: top;
-  height: 210px;
+	min-width: 100%;
+	vertical-align: top;
+	height: 210px;
 	overflow: hidden;
 }
 
 div.item i {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  border-radius: 50%;
-  font-size: 34px;
-  color: #000000;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  background: #ffffff;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border-radius: 50%;
+	font-size: 44px;
+	color: #0275d8;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	background: #ffffff;
 }
 
 div.holder {
 	margin: 10px;
 	text-align: center;
-}
-
-div.item.red {
-  background-color: #0275d8;
-}
-div.item.red i {
-  color: #0275d8;
+	border-radius: 10px 10px 0 0;
+	background-color: #eeeeee;
 }
 
 div.item:hover img {
-  opacity: 0.3;
-  filter: grayscale(100%);
+	opacity: 0.3;
+	filter: grayscale(100%);
 }
 
 div.item i {
-  transition: .3s ease-in-out;
-  transform: translate(-50%, -50%) scale(0);
+	transition: .3s ease-in-out;
+	transform: translate(-50%, -50%) scale(0);
 }
 
 div.item:hover i {
-  transform: translate(-50%, -50%) scale(1);
-  transition: transform .3s .1s ease-in;
+	transform: translate(-50%, -50%) scale(1);
+	transition: transform .3s .1s ease-in;
 }
 
 div.itemLabel {

@@ -15,13 +15,13 @@
 	<section class="row container2">
 		<% campgrounds.forEach(function(campground){ %>
 		<div class="holder">
-			<div class="item red">
+			<div class="item bg-light">
 				<a href="/campgrounds/<%=campground._id%>">
 				<img src="<%=campground.image%>"/>
 				<i class="fa fa-arrow-circle-right"></i>
 				</a>
 			</div>
-			<div class="">
+			<div class="lb">
 				<a href="/campgrounds/<%=campground._id%>"><h4><%= campground.name %></h4></a>
 			</div>
 		</div>
