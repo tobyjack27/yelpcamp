@@ -125,7 +125,7 @@ router.delete('/:id', function(req, res) {
     } catch(err) {
         if(err) {
           req.flash("error", err.message);
-          return res.redirect("/campgrounds");
+          return res.redirect("/campgrounds" + req.params.id);
         }
     }
   });
