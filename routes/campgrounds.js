@@ -95,14 +95,16 @@ router.put("/:id", middleware.isLoggedIn, upload.single("image"), function(req, 
 		foundCampground.price = req.body.campground.price;
 		foundCampground.description = req.body.campground.description;
 		if (req.file) {
-			var destroy = await cloudinary.v2.uploader.destroy(foundCampground.image_id).catch((err) => req.flash("error", err.message), res.redirect("/campgrounds/" + req.params.id + "/edit"));;
-			var result = await cloudinary.v2.uploader.upload(req.file.path).catch((err) => req.flash("error", err.message), res.redirect("/campgrounds/" + req.params.id + "/edit"));;
+			var destroy = await cloudinary.v2.uploader.destroy(foundCampground.image_id).catch((err) => res.redirect("/campgrounds/" + req.params.id + "/edit"));;
+			var result = await cloudinary.v2.uploader.upload(req.file.path).catch((err) => res.redirect("/campgrounds/"));;
 			foundCampground.image_id = result.public_id;
 			foundCampground.image = result.secure_url;
 		};
 		foundCampground.save(function(err){
-			req.flash("error", err.message);
-			res.redirect("/campgrounds/" + req.params.id + "/edit")
+			if (err) {
+				req.flash("error", err.message);
+				res.redirect("/campgrounds/" + req.params.id + "/edit")
+			}
 		});
 		res.redirect("/campgrounds/" + req.params.id)
 	});

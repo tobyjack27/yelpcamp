@@ -19,12 +19,15 @@
                     <input class="form-control" type="text" name="campground[description]" placeholder="description">
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+					<button class="loading btn btn-lg btn-primary btn-block">
+						<div class="graphic"></div>Uploading...
+					</button>  
+					<button class="submit btn btn-lg btn-primary btn-block">Submit!</button>
                 </div>
             </form>
             <a href="/campgrounds">Go Back</a>
         </div>
     </div>
 </section>
-
+<script src="/javascript/upload.js"></script>
 <%- include("../partials/footer") %>

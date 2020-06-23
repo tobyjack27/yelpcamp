@@ -89,3 +89,36 @@ div.itemLabel {
 	line-height: 30px;
 	padding: 0 10px;
 }
+
+
+
+/* –––––– */
+
+div.graphic {
+    width: 20px;
+    height: 20px;
+    border: 2px solid white;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+button.btn.btn-lg {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+button.submit.btn.btn-lg {
+  transform: translateY(-50px);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

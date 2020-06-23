@@ -68,7 +68,7 @@ router.get("/:comment_id/edit", middleware.isCommentAuthor, function(req, res){
 router.put("/:comment_id", middleware.isCommentAuthor, function(req, res){
 	Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(err, updatedComment){
 		if(err) {
-			req.flash("error", "Something went wrong");
+			req.flash("error", err.message);
 			res.redirect("campgrounds/" + req.params.id);
 		} else {
 			req.flash("success", "Comment updated")
