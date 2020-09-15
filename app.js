@@ -61,7 +61,7 @@ cloudinary.config({
 
 //configure passport
 app.use(require("express-session")({
-	secret: "The quick brown fox jumped over the lazy dog.",
+	secret: process.env.PASSPORT_SECRET,
 	resave: false,
 	saveUninitialized: false
 }));
